@@ -27,23 +27,23 @@ class MoviesState extends Equatable {
   });
 
   MoviesState copyWith({
-    List<Movie>? popularMovies,
-    RequestStatus? popularState,
-    String? popularMessage,
     List<Movie>? topRatedMovies,
     RequestStatus? topRatedState,
     String? topRatedMessage,
+    List<Movie>? popularMovies,
+    RequestStatus? popularState,
+    String? popularMessage,
     List<Movie>? nowPlayingMovies,
     RequestStatus? nowPlayingState,
     String? nowPlayingMessage,
   }) {
     return MoviesState(
-      popularMovies: popularMovies ?? this.popularMovies,
-      popularState: popularState ?? this.popularState,
-      popularMessage: popularMessage ?? this.popularMessage,
       topRatedMovies: topRatedMovies ?? this.topRatedMovies,
       topRatedState: topRatedState ?? this.topRatedState,
       topRatedMessage: topRatedMessage ?? this.topRatedMessage,
+      popularMovies: popularMovies ?? this.popularMovies,
+      popularState: popularState ?? this.popularState,
+      popularMessage: popularMessage ?? this.popularMessage,
       nowPlayingMovies: nowPlayingMovies ?? this.nowPlayingMovies,
       nowPlayingState: nowPlayingState ?? this.nowPlayingState,
       nowPlayingMessage: nowPlayingMessage ?? this.nowPlayingMessage,

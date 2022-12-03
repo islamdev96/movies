@@ -16,6 +16,8 @@ class PopularComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<MoviesBloc, MoviesState>(
       builder: (BuildContext context, state) {
+        print(state);
+
         switch (state.popularState) {
           case RequestStatus.loading:
             return const SizedBox(
@@ -24,6 +26,7 @@ class PopularComponent extends StatelessWidget {
                 child: CircularProgressIndicator(),
               ),
             );
+
           case RequestStatus.loaded:
             return FadeIn(
               duration: const Duration(milliseconds: 500),
