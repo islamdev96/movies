@@ -8,23 +8,23 @@ import '../../movies/data/repository/movies_repository.dart';
 import '../../movies/domain/usecase/get_now_player_movies_uecase.dart';
 import '../../movies/presentation/controller/movies_block.dart';
 
-final getIt = GetIt.instance;
+final sl = GetIt.instance;
 
 class ServicesLocator {
   void init() {
-    getIt.registerFactory(() => MoviesBloc(getIt(), getIt(), getIt()));
+    sl.registerFactory(() => MoviesBloc(sl(), sl(), sl()));
     //UseCase
-    getIt.registerLazySingleton(() => GetNowPlayerMoviesUecase(getIt()));
-    getIt.registerLazySingleton(() => GetPopularMoviesUecase(getIt()));
-    getIt.registerLazySingleton(() => GetTopRatedMoviesUecase(getIt()));
+    sl.registerLazySingleton(() => GetNowPlayerMoviesUecase(sl()));
+    sl.registerLazySingleton(() => GetPopularMoviesUecase(sl()));
+    sl.registerLazySingleton(() => GetTopRatedMoviesUecase(sl()));
 
     // Repositories
 
-    getIt.registerLazySingleton<BaseMoviesRepository>(
-        () => MoviesRepository(getIt()));
+    sl.registerLazySingleton<BaseMoviesRepository>(
+        () => MoviesRepository(sl()));
 
     // DATA SOURCES
-    getIt.registerLazySingleton<BaseMovieRemoteDateSource>(
+    sl.registerLazySingleton<BaseMovieRemoteDateSource>(
         () => MovieRemoteDateSource());
   }
 }
