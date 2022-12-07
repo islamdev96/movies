@@ -1,6 +1,6 @@
-import '../../domain/entities/movie.dart';
+import '../../domain/entities/movies.dart';
 
-class MovieModel extends Movie {
+class MovieModel extends Movies {
   const MovieModel({
     required int id,
     required String title,
@@ -24,9 +24,9 @@ class MovieModel extends Movie {
       id: json['id'],
       title: json['title'],
       backdropPath: json['backdrop_path'],
-      genreIds: json['genre_ids'].cast<int>(),
+      // genreIds: json['genre_ids'].cast<int>(),
 
-      // genreIds: List<int>.from(json['genre_ids'].map((e) => e)),
+      genreIds: List<int>.from(json['genre_ids'].map((e) => e)),
       overview: json['overview'],
       voteAverage: json['vote_average'].toDouble(),
       releaseDate: json['release_date'],

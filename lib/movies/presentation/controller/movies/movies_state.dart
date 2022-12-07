@@ -1,16 +1,16 @@
 import 'package:equatable/equatable.dart';
 
-import '../../../core/utils/enun.dart';
-import '../../domain/entities/movie.dart';
+import '../../../../core/utils/enun.dart';
+import '../../../domain/entities/movies.dart';
 
 class MoviesState extends Equatable {
-  final List<Movie> nowPlayingMovies;
+  final List<Movies> nowPlayingMovies;
   final RequestStatus nowPlayingState;
   final String nowPlayingMessage;
-  final List<Movie> popularMovies;
+  final List<Movies> popularMovies;
   final RequestStatus popularState;
   final String popularMessage;
-  final List<Movie> topRatedMovies;
+  final List<Movies> topRatedMovies;
   final RequestStatus topRatedState;
   final String topRatedMessage;
 
@@ -27,13 +27,13 @@ class MoviesState extends Equatable {
   });
 
   MoviesState copyWith({
-    List<Movie>? topRatedMovies,
+    List<Movies>? topRatedMovies,
     RequestStatus? topRatedState,
     String? topRatedMessage,
-    List<Movie>? popularMovies,
+    List<Movies>? popularMovies,
     RequestStatus? popularState,
     String? popularMessage,
-    List<Movie>? nowPlayingMovies,
+    List<Movies>? nowPlayingMovies,
     RequestStatus? nowPlayingState,
     String? nowPlayingMessage,
   }) {

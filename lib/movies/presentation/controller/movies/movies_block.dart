@@ -5,10 +5,11 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies/movies/domain/usecase/get_popular_movies_uecase.dart';
 import 'package:movies/movies/domain/usecase/get_top_rated_movies_uecase.dart';
-import 'package:movies/movies/presentation/controller/movies_event.dart';
+import 'package:movies/movies/presentation/controller/movies/movies_event.dart';
 
-import '../../../core/utils/enun.dart';
-import '../../domain/usecase/get_now_player_movies_uecase.dart';
+import '../../../../core/usecase/base_usecase.dart';
+import '../../../../core/utils/enun.dart';
+import '../../../domain/usecase/get_now_player_movies_uecase.dart';
 import 'movies_state.dart';
 
 class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
@@ -28,7 +29,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   FutureOr<void> _getNowPlayingMovies(
       GetNowPlayingMoviesEvent event, Emitter<MoviesState> emit) async {
-    final result = await getNowPlayerMoviesUecase();
+    final result = await getNowPlayerMoviesUecase(const NoParameters());
     result.fold(
       (l) => emit(
         state.copyWith(
@@ -47,7 +48,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   FutureOr<void> _getPopularMovies(
       GetPopularMoviesEvent event, Emitter<MoviesState> emit) async {
-    final result = await getPopularMoviesUecase();
+    final result = await getPopularMoviesUecase(const NoParameters());
     result.fold(
       (l) => emit(
         state.copyWith(
@@ -66,7 +67,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   FutureOr<void> _getTopRatedMovies(
       GetTopRatedMoviesEvent event, Emitter<MoviesState> emit) async {
-    final result = await getTopRatedMoviesUecase();
+    final result = await getTopRatedMoviesUecase(const NoParameters());
     result.fold(
       (l) => emit(
         state.copyWith(

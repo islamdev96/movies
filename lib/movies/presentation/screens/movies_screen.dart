@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movies/movies/presentation/components/popular_component.dart';
-import 'package:movies/movies/presentation/controller/movies_event.dart';
+import 'package:movies/movies/presentation/controller/movies/movies_event.dart';
 
 import '../../../core/components/constants.dart';
 import '../../../core/services/services_locator.dart';
 import '../components/now_playing_component.dart';
 import '../components/top_rated_component.dart';
-import '../controller/movies_block.dart';
+import '../controller/movies/movies_block.dart';
 
 class MoviesScreen extends StatelessWidget {
   const MoviesScreen({Key? key}) : super(key: key);
@@ -21,7 +21,6 @@ class MoviesScreen extends StatelessWidget {
         ..add(GetPopularMoviesEvent())
         ..add(GetTopRatedMoviesEvent()),
       child: Scaffold(
-        backgroundColor: kPrimaryColor,
         body: SingleChildScrollView(
           key: const Key('movieScrollView'),
           child: Column(

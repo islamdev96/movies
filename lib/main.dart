@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies/core/components/constants.dart';
 import 'package:movies/core/services/services_locator.dart';
 
 import 'movies/presentation/screens/movies_screen.dart';
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Movies App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: kPrimaryColor,
       ),
       home: const MoviesScreen(),
     );
