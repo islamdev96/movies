@@ -6,11 +6,11 @@ import 'package:movies/movies/domain/entities/recommmendation.dart';
 
 import '../repository/base_movies_repository.dart';
 
-class GetRecommendationUsecase
+class GetMoviesRecommendationUsecase
     extends BaseUseCase<List<Recommendation>, RecommendationParameters> {
   final BaseMoviesRepository baseMoviesRepository;
 
-  GetRecommendationUsecase(this.baseMoviesRepository);
+  GetMoviesRecommendationUsecase(this.baseMoviesRepository);
   @override
   Future<Either<Failure, List<Recommendation>>> call(
       RecommendationParameters parameters) async {

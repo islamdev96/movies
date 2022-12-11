@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movies/core/utils/app_string.dart';
 import 'package:movies/movies/presentation/components/popular_component.dart';
 import 'package:movies/movies/presentation/controller/movies/movies_event.dart';
 
@@ -33,7 +34,7 @@ class MoviesScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Popular",
+                      AppString.popular,
                       style: GoogleFonts.poppins(
                         color: kTextColor,
                         fontSize: 19,
@@ -49,7 +50,7 @@ class MoviesScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: const [
-                            Text('See More',
+                            Text(AppString.seeMore,
                                 style: TextStyle(
                                   color: kTextColor,
                                   fontSize: 14,
@@ -78,7 +79,7 @@ class MoviesScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Top Rated",
+                      AppString.topRated,
                       style: GoogleFonts.poppins(
                         color: kTextColor,
                         fontSize: 19,
@@ -94,7 +95,7 @@ class MoviesScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: const [
-                            Text('See More',
+                            Text(AppString.seeMore,
                                 style: TextStyle(color: kTextColor)),
                             Icon(
                               Icons.arrow_forward_ios,

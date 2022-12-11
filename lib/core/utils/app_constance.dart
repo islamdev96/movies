@@ -5,16 +5,15 @@ class ApiConstance {
   static const String getNowPlayingPath =
       "$baseUrl/movie/now_playing?api_key=$apiKey";
 
-  static const String getPopularPath =
-      "$baseUrl/movie/now_playing?api_key=$apiKey";
+  static const String getPopularPath = "$baseUrl/movie/popular?api_key=$apiKey";
   static const String getTopRatedPath =
       "$baseUrl/movie/top_rated?api_key=$apiKey";
 
   static String getMovieDetailsPath(int moviesId) =>
       "$baseUrl/movie/$moviesId?api_key=$apiKey";
 
-  static String getRecommendationPath(int recommindationId) =>
-      "$baseUrl/movie/$recommindationId/recommendations?api_key=$apiKey  ";
+  static String getRecommendationPath(int moviesId) =>
+      "$baseUrl/movie/$moviesId/recommendations?api_key=$apiKey  ";
 
   static const String baseImageUrl = "https://image.tmdb.org/t/p/w500";
 

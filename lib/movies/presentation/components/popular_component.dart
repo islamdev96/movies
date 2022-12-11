@@ -8,6 +8,7 @@ import 'package:shimmer/shimmer.dart';
 
 import '../../../core/utils/app_constance.dart';
 import '../../../core/utils/enun.dart';
+import '../screens/movie_detail_screen.dart';
 
 class PopularComponent extends StatelessWidget {
   const PopularComponent({super.key});
@@ -18,8 +19,6 @@ class PopularComponent extends StatelessWidget {
       buildWhen: (previous, current) =>
           previous.popularState != current.popularState,
       builder: (BuildContext context, state) {
-        print(state);
-
         switch (state.popularState) {
           case RequestStatus.loading:
             return const SizedBox(
@@ -45,7 +44,11 @@ class PopularComponent extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
                         onTap: () {
-                          /// TODO : NAVIGATE TO  MOVIE DETAILS
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      MovieDetailScreen(id: movie.id)));
                         },
                         child: ClipRRect(
                           borderRadius:

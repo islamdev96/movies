@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies/core/components/constants.dart';
 import 'package:movies/core/services/services_locator.dart';
+import 'package:movies/core/utils/app_string.dart';
 
 import 'movies/presentation/screens/movies_screen.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Movies App',
+      title: AppString.appName,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: kPrimaryColor,
       ),
