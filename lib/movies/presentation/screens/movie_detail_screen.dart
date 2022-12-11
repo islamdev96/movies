@@ -204,10 +204,10 @@ class MovieDetailContent extends StatelessWidget {
                   ),
                 ),
                 const Tab(text: AppString.morelikethis),
-                // SliverPadding(
-                //   padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 24.0),
-                //   sliver: _showRecommendations(),
-                // ),
+                SliverPadding(
+                  padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 24.0),
+                  sliver: _showRecommendations(),
+                ),
               ],
             );
 

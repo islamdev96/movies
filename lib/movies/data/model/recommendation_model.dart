@@ -12,4 +12,11 @@ class RecommendationModel extends Recommendation {
       backdropPath: json['backdrop_path'] ?? "/hZkgoQYus5vegHoetLkCJzb17zJ.jpg",
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'backdrop_path': backdropPath,
+    };
+  }
 }
